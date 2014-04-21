@@ -12,7 +12,7 @@ use Sonata\BlockBundle\Block\BlockContextInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 
-class PinterestShareButtonBlockService extends BaseShareButtonBlockService
+class GoogleShareButtonBlockService extends BaseShareButtonBlockService
 {
     /**
      * {@inheritdoc}
@@ -22,11 +22,9 @@ class PinterestShareButtonBlockService extends BaseShareButtonBlockService
         $settings = $blockContext->getSettings();
 
         $url = $settings['url'] ?:  $settings['default_url'];
-        $title = $settings['title'] ?:  $settings['default_title'];
-        $mediaUrl = $settings['media_url'] ?:  $settings['default_media_url'];
 
-        if($url && $title) {
-            $settings['share_url'] = sprintf('https://pinterest.com/pin/create/bookmarklet/?media=%s&url=%%&is_video=false&description=%s', urlencode($mediaUrl), urlencode($url), $settings['is_video'], urlencode($title));
+        if($url) {
+            $settings['share_url'] = sprintf('https://plus.google.com/share?url=%s', urlencode($url));
         }
 
         return $this->renderResponse($blockContext->getTemplate(), array(
@@ -48,15 +46,10 @@ class PinterestShareButtonBlockService extends BaseShareButtonBlockService
     public function setDefaultSettings(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'template'    => 'RzSeoBundle:Block:block_pinterest_share_button.html.twig',
+            'template'    => 'RzSeoBundle:Block:block_google_share_button.html.twig',
             'url'         => null,
-            'title'       => null,
-            'media_url'   => null,
             'default_url' => null,
-            'default_title'=> null,
-            'default_media_url'=> null,
             'share_url'   => null,
-            'is_video'    => false,
             'layout'      => $this->layoutList['content'],
         ));
     }
@@ -69,11 +62,7 @@ class PinterestShareButtonBlockService extends BaseShareButtonBlockService
         $formMapper->add('settings', 'sonata_type_immutable_array', array(
             'keys' => array(
                 array('default_url',    'url',      array('required' => false)),
-                array('default_title',  'text',  array('required' => false)),
-                array('default_media_url',    'url',      array('required' => false)),
                 array('url',    'url',      array('required' => false)),
-                array('title',  'text',  array('required' => false)),
-                array('media_url',    'url',      array('required' => false)),
                 array('layout', 'choice',   array('required' => true, 'choices' => $this->layoutList)),
             )
         ));
@@ -84,6 +73,6 @@ class PinterestShareButtonBlockService extends BaseShareButtonBlockService
      */
     public function getName()
     {
-        return 'Rz Custom Pinterest Pin button';
+        return 'Rz Custom Google+ Share button';
     }
 }
