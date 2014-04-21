@@ -1,0 +1,48 @@
+{
+    "name": "rz/seo-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 Bundle SonataPageBundle Extension",
+    "keywords": ["symfony2", "Sonata Project", "RZProject"],
+    "homepage": "https://github.com/rzproject/SeoBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mell M. Zamora",
+            "email": "me@mellzamora.com",
+            "homepage": "http://mellzamora.com"
+        },
+        {
+            "name": "Thomas Rabaix",
+            "email": "thomas.rabaix@sonata-project.org",
+            "homepage": "http://sonata-project.org"
+        },
+        {
+            "name": "Sonata Community",
+            "homepage": "https://github.com/sonata-project/SonataSeoBundle/contributors"
+        }
+    ],
+    "require": {
+        "symfony/symfony": "~2.4",
+        "sonata-project/exporter": ">=1.2.2,<2.0",
+        "twig/twig": "*"
+    },
+    "require-dev": {
+        "guzzle/guzzle": "3.*",
+        "rmzamora/seo-bundle": "~2.3",
+        "rmzamora/block-bundle": "~2.3",
+        "rmzamora/admin-bundle": "~2.3"
+    },
+    "suggest": {
+        "guzzle/guzzle": "3.*",
+        "sonata-project/block-bundle": "Allows you to use SEO friendly blocks",
+        "knplabs/knp-menu-bundle": "Used by the BreadcrumbMenuBuilder"
+    },
+    "autoload": {
+        "psr-4": { "Sonata\\SeoBundle\\": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    }
+}
