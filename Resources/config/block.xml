@@ -9,6 +9,7 @@
         <parameter key="rz.seo.block.facebook.share_button.class">Rz\SeoBundle\Block\Social\FacebookShareButtonBlockService</parameter>
         <parameter key="rz.seo.block.twitter.share_button.class">Rz\SeoBundle\Block\Social\TwitterShareButtonBlockService</parameter>
         <parameter key="rz.seo.block.pinterest.share_button.class">Rz\SeoBundle\Block\Social\PinterestShareButtonBlockService</parameter>
+        <parameter key="rz.seo.block.google.share_button.class">Rz\SeoBundle\Block\Social\GoogleShareButtonBlockService</parameter>
     </parameters>
 
     <services>
@@ -48,5 +49,13 @@
             <argument type="service" id="templating" />
         </service>
         <!-- Pinterest Social Button -->
+
+        <!-- Google+ Social Button -->
+        <service id="rz.seo.block.google.share_button" class="%rz.seo.block.google.share_button.class%">
+            <tag name="sonata.block" />
+            <argument>rz.seo.block.google.share_button</argument>
+            <argument type="service" id="templating" />
+        </service>
+        <!-- Google+ Social Button -->
     </services>
 </container>
