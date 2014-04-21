@@ -38,7 +38,7 @@
         "knplabs/knp-menu-bundle": "Used by the BreadcrumbMenuBuilder"
     },
     "autoload": {
-        "psr-4": { "Sonata\\SeoBundle\\": "" }
+        "psr-4": { "Rz\\SeoBundle\\": "" }
     },
     "extra": {
         "branch-alias": {
