@@ -25,5 +25,20 @@ class RzSeoExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('block.xml');
         $loader->load('services.xml');
+        $this->configureMetaTagsValues($container, $config);
+    }
+
+    /**
+     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
+     * @param array                                                   $config
+     */
+    public function configureMetaTagsValues(ContainerBuilder $container, $config)
+    {
+
+        $meta = array();
+        foreach($config['metatags'] as $metatags) {
+            $meta[$metatags] = $metatags;
+        }
+        $container->setParameter('rz_seo.metatags', $meta);
     }
 }
