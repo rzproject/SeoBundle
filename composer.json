@@ -29,7 +29,7 @@
     "require-dev": {
         "guzzle/guzzle": "3.*",
         "rmzamora/seo-bundle": "~2.3",
-        "rz/block-bundle": "~1.0",
+        "rz/block-bundle": "~1.1",
         "rz/admin-bundle": "~1.0"
     },
     "suggest": {
