@@ -28,7 +28,7 @@
     },
     "require-dev": {
         "guzzle/guzzle": "3.*",
-        "rmzamora/seo-bundle": "1.2.*",
+        "rmzamora/seo-bundle": "1.1.*",
         "rz/block-bundle": "1.1.*",
         "rz/admin-bundle": "1.0.*"
     },
