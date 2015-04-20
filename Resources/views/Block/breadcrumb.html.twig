@@ -1,10 +1,19 @@
-{% extends 'knp_menu_ordered.html.twig' %}
+{% extends 'knp_menu.html.twig' %}
 {% block label %}{{ item.label|trans(item.getExtra('translation_params', {}), item.getExtra('translation_domain', 'SonataSeoBundle')) }}{% endblock %}
 
 {% block list %}
-{% spaceless %}
-    <div class="sonata_breadcrumb">
-        {{ parent() }}
+    {% import 'knp_menu.html.twig' as macros %}
+
+    {% if item.hasChildren and options.depth is not sameas(0) and item.displayChildren %}
+    <div class="breadcrumbs">
+        <ul{{ macros.attributes(listAttributes) }}>
+            {{ block('children') }}
+        </ul>
     </div>
-{% endspaceless %}
+    {% endif %}
 {% endblock %}
+
+{% block linkElement %}
+    <a href="{{ item.uri }}"{{ knp_menu.attributes(item.linkAttributes) }}>{{ block('label') }}</a> {% if item.uri is not empty and (not matcher.isCurrent(item)) %}<i class="icon-angle-right"></i>{% endif %}
+{% endblock %}
+
