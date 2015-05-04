@@ -2,3 +2,8 @@ SeoBundle
 =========
 
 SeoBundle
+
+Version
+-------
+
+**DEPRECATED**
