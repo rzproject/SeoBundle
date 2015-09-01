@@ -28,9 +28,9 @@
     },
     "require-dev": {
         "guzzle/guzzle": "3.*",
-        "rmzamora/seo-bundle": "2.6.0.*",
-        "rz/block-bundle": "2.1.0.*",
-        "rz/admin-bundle": "2.1.0.*"
+        "rmzamora/seo-bundle": "2.5.0.*",
+        "rz/block-bundle": "2.0.0.*",
+        "rz/admin-bundle": "2.0.0.*"
     },
     "suggest": {
         "guzzle/guzzle": "3.*",
@@ -42,7 +42,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.1.0.x-dev"
+            "dev-2.0.0": "2.0.0.x-dev"
         }
     }
 }
