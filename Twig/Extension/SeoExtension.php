@@ -28,7 +28,7 @@ class SeoExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'rz_seo_title'      => new \Twig_Function_Method($this, 'renderRawTitle'),
+            new \Twig_SimpleFunction('rz_seo_title', array($this, 'renderRawTitle')),
         );
     }
 
