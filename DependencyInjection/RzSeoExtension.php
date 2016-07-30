@@ -33,7 +33,6 @@ class RzSeoExtension extends Extension
      */
     public function configureMetaTagsValues(ContainerBuilder $container, $config)
     {
-
         $meta = array();
         foreach($config['metatags'] as $metatags) {
             $meta[$metatags] = $metatags;
